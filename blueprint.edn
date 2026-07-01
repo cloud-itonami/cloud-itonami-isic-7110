@@ -1,0 +1,10 @@
+{:itonami.blueprint/id "cloud-itonami-7110"
+ :itonami.blueprint/name "Community Architectural and Engineering Practice"
+ :itonami.blueprint/isic-rev5 "7110"
+ :itonami.blueprint/domain :professional/architectural-engineering
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:built-environment :safety :professional-access]
+ :itonami.blueprint/governor :practice-governor
+ :itonami.blueprint/robotics true
+ :itonami.blueprint/required-technologies [:robotics :cae :identity :forms :dmn :bpmn :audit-ledger]
+ :itonami.blueprint/status :public-oss}
