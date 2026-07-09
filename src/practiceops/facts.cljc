@@ -45,14 +45,14 @@
           :owner-authority "国土交通省 (Ministry of Land, Infrastructure, Transport and Tourism, MLIT) / 都道府県"
           :legal-basis "建築基準法 (Building Standards Act)"
           :national-spec "建築基準法に基づく構造計算・確認申請基準"
-          :provenance "https://www.mlit.go.jp/jutakukentiku/build/jutakukentiku_house_tk3_000055.html"
+          :provenance "https://laws.e-gov.go.jp/law/325AC0000000201"
           :required-evidence ["受託記録 (intake record)"
                               "範囲確定記録 (scope record)"
                               "設計記録 (design record)"
                               "検証記録 (verification record)"]
           :seal-owner-authority "都道府県知事 / 国土交通大臣 (建築士法)"
           :seal-legal-basis "建築士法 (Architects and Building Engineers Act) 第20条 (設計・工事監理の業務に必要な表示行為)"
-          :seal-provenance "https://www.mlit.go.jp/jutakukentiku/build/jutakukentiku_house_tk3_000042.html"}
+          :seal-provenance "https://laws.e-gov.go.jp/law/325AC1000000202"}
    "USA" {:name "United States"
           :owner-authority "International Code Council (ICC) model code, adopted state-by-state"
           :legal-basis "International Building Code (IBC), as locally adopted"
@@ -64,7 +64,7 @@
                               "Verification record"]
           :seal-owner-authority "State boards of professional engineering/architectural licensure (NCEES-model)"
           :seal-legal-basis "State Professional Engineering Practice Act (NCEES Model Law/Rules)"
-          :seal-provenance "https://ncees.org/licensure/laws-and-rules/"}
+          :seal-provenance "https://ncees.org/wp-content/uploads/2025/09/Model-Law_August-2025_web.pdf"}
    "GBR" {:name "United Kingdom"
           :owner-authority "Ministry of Housing, Communities and Local Government (Building Safety Regulator)"
           :legal-basis "Building Regulations 2010 (as amended by the Building Safety Act 2022)"
@@ -76,7 +76,7 @@
                               "Verification record"]
           :seal-owner-authority "Architects Registration Board (ARB) / Institution of Civil Engineers (ICE) chartered status"
           :seal-legal-basis "Architects Act 1997 (protected title 'architect')"
-          :seal-provenance "https://arb.org.uk/architect-information/the-architects-act/"}
+          :seal-provenance "https://www.arb.org.uk/about-arb/legislation/architects-act/"}
    "DEU" {:name "Germany"
           :owner-authority "Landesbauordnungen (state building-code authorities)"
           :legal-basis "Musterbauordnung (MBO, model building code) as implemented per Land"
