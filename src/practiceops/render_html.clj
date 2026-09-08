@@ -5,7 +5,7 @@
   -> practiceops.store). No invented numbers, no timestamps, byte-identical
   across reruns."
   (:require [jp-go-dds.skin]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [practiceops.store :as store]
             [practiceops.operation :as op]
             [practiceops.phase :as phase]

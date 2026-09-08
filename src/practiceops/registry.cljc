@@ -26,7 +26,7 @@
   a certification itself (that is `practiceops.operation`'s `:design/
   verify`/`:design/deliver`, always human-gated -- see README
   `Actuation`)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn- unsigned-certificate
   "Every certificate this actor produces is UNSIGNED -- signature is
@@ -101,7 +101,7 @@
     (throw (ex-info "verification: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "verification: sequence must be >= 0" {})))
-  (let [verification-number (str (str/upper-case jurisdiction) "-VER-" (zero-pad sequence 6))
+  (let [verification-number (str (str/upper jurisdiction) "-VER-" (zero-pad sequence 6))
         record {"record_id" verification-number
                 "kind" "verification-draft"
                 "commission_id" commission-id
@@ -126,7 +126,7 @@
     (throw (ex-info "delivery: jurisdiction required" {})))
   (when (< sequence 0)
     (throw (ex-info "delivery: sequence must be >= 0" {})))
-  (let [delivery-number (str (str/upper-case jurisdiction) "-DLV-" (zero-pad sequence 6))
+  (let [delivery-number (str (str/upper jurisdiction) "-DLV-" (zero-pad sequence 6))
         record {"record_id" delivery-number
                 "kind" "delivery-draft"
                 "commission_id" commission-id
