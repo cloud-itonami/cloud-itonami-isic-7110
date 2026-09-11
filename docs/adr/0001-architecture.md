@@ -201,7 +201,7 @@ a design or auto-delivering a certification).
 - `MemStore` ‖ `DatomicStore` parity is proven by
   `test/practiceops/store_contract_test.cljk`.
 - 39 tests / 176 assertions pass; lint is clean; the demo
-  (`clojure -M:dev:run`) walks two clean verify+deliver lifecycles
+  (`kbb -M:dev:run`) walks two clean verify+deliver lifecycles
   (no seal required, seal required-and-verified), plus four HARD-hold
   scenarios, end-to-end.
 - `blueprint.edn` needed both a genuine field-sync fix (a missing
