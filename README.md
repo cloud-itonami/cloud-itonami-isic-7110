@@ -69,7 +69,7 @@ layers enforce this (`practiceops.governor`'s `:actuation/verify-
 design`/`:actuation/deliver-certification` high-stakes gate and
 `practiceops.phase`'s phase table, which never puts either op in any
 phase's `:auto` set) -- see `practiceops.phase`'s docstring and
-`test/practiceops/phase_test.clj`'s `design-verify-never-auto-at-any-
+`test/practiceops/phase_test.cljk`'s `design-verify-never-auto-at-any-
 phase`/`design-deliver-never-auto-at-any-phase`. The actor may draft,
 check and recommend; a human practice principal/licensed professional
 is always the one who actually verifies a design or delivers a
@@ -169,14 +169,14 @@ and `hospitalityops`/5510's own investigated-and-ruled-out precedent).
 
 | File | Role |
 |---|---|
-| `src/practiceops/store.cljc` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + verification AND delivery history (dual history). The double-actuation guard checks dedicated `:verified?`/`:delivered?` booleans rather than a `:status` value |
-| `src/practiceops/registry.cljc` | Verification/delivery draft records, plus `fee-total-matches-claim?` -- an honest reapplication of the SAME ground-truth-recompute discipline every sibling actor's own cost/total-matching check establishes |
-| `src/practiceops/facts.cljc` | Per-jurisdiction building/engineering-code AND professional-licensure catalog with an official spec-basis citation per entry, honest coverage reporting -- ALL FOUR seeded jurisdictions have a professional-seal sub-citation here |
-| `src/practiceops/practiceopsllm.cljc` | **PracticeOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/jurisdiction-assessment/verification/delivery proposals |
-| `src/practiceops/governor.cljc` | **Design Governor** -- 5 HARD checks (spec-basis · evidence-incomplete · design-outside-scope, FLAGSHIP NEW, the 82nd unconditional-evaluation-discipline grounding · fee-total-mismatch · professional-seal-invalid, CONDITIONAL, the 83rd grounding) + 2 double-actuation guards + 1 soft (confidence/actuation gate) |
-| `src/practiceops/phase.cljc` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (verify/deliver always human; commission intake is the ONLY auto-eligible op, no direct professional-liability risk) |
-| `src/practiceops/operation.cljc` | **OperationActor** -- langgraph StateGraph |
-| `src/practiceops/sim.cljc` | demo driver |
+| `src/practiceops/store.cljk` | **Store** protocol -- `MemStore` ‖ `DatomicStore` (`langchain.db`) + append-only audit ledger + verification AND delivery history (dual history). The double-actuation guard checks dedicated `:verified?`/`:delivered?` booleans rather than a `:status` value |
+| `src/practiceops/registry.cljk` | Verification/delivery draft records, plus `fee-total-matches-claim?` -- an honest reapplication of the SAME ground-truth-recompute discipline every sibling actor's own cost/total-matching check establishes |
+| `src/practiceops/facts.cljk` | Per-jurisdiction building/engineering-code AND professional-licensure catalog with an official spec-basis citation per entry, honest coverage reporting -- ALL FOUR seeded jurisdictions have a professional-seal sub-citation here |
+| `src/practiceops/practiceopsllm.cljk` | **PracticeOps-LLM** -- `mock-advisor` ‖ `llm-advisor`; intake/jurisdiction-assessment/verification/delivery proposals |
+| `src/practiceops/governor.cljk` | **Design Governor** -- 5 HARD checks (spec-basis · evidence-incomplete · design-outside-scope, FLAGSHIP NEW, the 82nd unconditional-evaluation-discipline grounding · fee-total-mismatch · professional-seal-invalid, CONDITIONAL, the 83rd grounding) + 2 double-actuation guards + 1 soft (confidence/actuation gate) |
+| `src/practiceops/phase.cljk` | **Phase 0→3** -- read-only → assisted intake → assisted assess → supervised (verify/deliver always human; commission intake is the ONLY auto-eligible op, no direct professional-liability risk) |
+| `src/practiceops/operation.cljk` | **OperationActor** -- langgraph StateGraph |
+| `src/practiceops/sim.cljk` | demo driver |
 | `test/practiceops/*_test.clj` | governor contract · phase invariants · store parity · registry conformance · facts coverage |
 
 ## Business-process coverage (honest)
