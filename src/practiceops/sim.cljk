@@ -1,5 +1,5 @@
 (ns practiceops.sim
-  "Demo driver -- `clojure -M:dev:run`. Walks a clean commission
+  "Demo driver -- `kbb -M:dev:run`. Walks a clean commission
   through intake -> jurisdiction assessment -> design verification
   (escalate/approve/commit) -> certification delivery (escalate/
   approve/commit), then a SEPARATE clean seal-required commission
