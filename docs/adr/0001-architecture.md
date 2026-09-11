@@ -147,7 +147,7 @@ prior governor's guards establish, informed by
 `practiceops.store/Store` is implemented by both `MemStore` (atom-
 backed, default for dev/tests/demo) and `DatomicStore` (`langchain.
 db`-backed), proven to satisfy the same contract in
-`test/practiceops/store_contract_test.clj`.
+`test/practiceops/store_contract_test.cljk`.
 
 ### Decision 9: no bespoke domain capability lib; a genuine `blueprint.edn` field-sync gap found and fixed
 
@@ -199,7 +199,7 @@ a design or auto-delivering a certification).
   overall) and `professional-seal-invalid?` (83rd distinct application
   overall, the ELEVENTH conditional variant).
 - `MemStore` ‖ `DatomicStore` parity is proven by
-  `test/practiceops/store_contract_test.clj`.
+  `test/practiceops/store_contract_test.cljk`.
 - 39 tests / 176 assertions pass; lint is clean; the demo
   (`clojure -M:dev:run`) walks two clean verify+deliver lifecycles
   (no seal required, seal required-and-verified), plus four HARD-hold
