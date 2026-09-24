@@ -1,0 +1,44 @@
+;; What this vertical's robot physically does, declared for
+;; kotoba.robotics.process (kotoba-lang/robotics). `kbb -M:dev:physics` runs it.
+;;
+;; README "Robotics premise": a field and drawing robot performs site survey,
+;; drafting and verification tasks (ISIC 7110, architectural and engineering
+;; activities). Its physical work: carrying the total station across a sloped
+;; site, verifying delivered reinforcing bar by tensile test, and checking the
+;; fire resistance of a slab design by the temperature at the rebar's cover
+;; depth.
+;;
+;; Every number without a cited source is marked `estimate` in its :basis.
+;; Replacing an estimate with a sourced value is this bot's growth work.
+{:physics/schema "itonami.physical-ai.spec.v1"
+ :repo "cloud-itonami/cloud-itonami-isic-7110"
+ :cases
+ [{:id :total-station-rover-on-site
+   :kind :transport
+   :procedure "survey rover carries the total station on its tripod mast across a graded site slope to the next set-up point"
+   :params {:mass-kg 45.0 :payload-kg 12.0 :distance-m 50.0 :v-max-mps 0.8 :a-max-mps2 0.4
+            :brake-decel-mps2 1.0 :drive-force-n 300.0 :crr 0.05
+            :cog-height-m 0.35 :payload-cog-height-m 1.40 :support-half-length-m 0.35
+            :max-time-s 1800.0}
+   :sweep {:param :slope-deg :values [0.0 5.0 10.0 15.0 20.0 24.0]}
+   :quantity :min-tipover-margin
+   :limit {:min 0.3 :basis "estimate: keep 30 % of the static tip-over margin with the instrument mast up on loose ground"}
+   :boundary {:lo 0.0 :hi 25.0}}
+  {:id :rebar-mill-check-tensile
+   :kind :material
+   :procedure "tensile test of a D16 deformed bar sample from a site delivery, to verify the SD345 grade on the mill certificate"
+   :params {:area-m2 1.986e-4 :length-m 0.20 :hardening-pa 1.0e9 :max-force-n 110000.0}
+   :sweep {:param :yield-stress-pa :values [300.0e6 330.0e6 345.0e6 380.0e6 420.0e6]}
+   :quantity :yield-force-n
+   :limit {:min 68517.0 :basis "JIS G 3112 SD345: minimum yield point 345 N/mm2, times the D16 nominal section 198.6 mm2"}
+   :boundary {:lo 280.0e6 :hi 450.0e6}}
+  {:id :slab-cover-depth-60min-fire
+   :kind :thermal
+   :procedure "concrete slab soffit under 60 min of the ISO 834-1 standard fire; the slab is modelled down to the rebar's cover depth with an adiabatic back (conservative), so the back face is the rebar temperature"
+   :params {:conductivity-w-mk 1.6 :density-kg-m3 2300.0 :specific-heat-j-kgk 1000.0
+            :hot-curve :iso-834 :h-front-w-m2k 25.0 :h-back-w-m2k 0.0
+            :duration-s 3600.0 :nodes 11 :threshold-c 500.0}
+   :sweep {:param :thickness-m :values [0.015 0.025 0.035 0.045 0.06]}
+   :quantity :peak-back-c
+   :limit {:max 500.0 :basis "estimate: 500 C critical temperature for reinforcing steel as used in simplified fire design (check against EN 1992-1-2 before citing)"}
+   :boundary {:lo 0.01 :hi 0.08}}]}
