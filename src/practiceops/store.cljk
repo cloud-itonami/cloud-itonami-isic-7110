@@ -33,7 +33,7 @@
   works program trusting an architectural/engineering operator needs,
   and the evidence an operator needs if a verification or a delivery
   is later disputed."
-  (:require #?(:clj  [clojure.edn :as edn]
+  (:require #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])
             [practiceops.registry :as registry]
             [langchain.db :as d]))
